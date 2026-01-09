@@ -1,5 +1,6 @@
 import {Component} from "react";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Home.css"
 
@@ -91,7 +92,7 @@ class Home extends Component {
           <h2>2026 Election HQ</h2>
           <div className="nav-buttons">
             <button className="home-button">Home</button>
-            <button className="predictions-button">Predictions</button>
+            <button className="predictions-button" onClick={() => { this.props.navigate("/predictions"); }}>Predictions</button>
           </div>
         </nav>
 
@@ -175,6 +176,9 @@ class Home extends Component {
                             onMouseLeave={() => {
                               this.setState({ hoveredState: null });
                             }}
+                            onClick={() => {
+                              this.props.navigate(`/state/${geo.properties.name}`);
+                            }}
                             className="state-geography state-hovered"
                             style={{
                               default: { outline: "none" },
@@ -211,4 +215,9 @@ class Home extends Component {
   }
 }
 
-export default Home;
+function HomeWrapper(props) {
+  const navigate = useNavigate();
+  return <Home {...props} navigate={navigate} />;
+}
+
+export default HomeWrapper;
