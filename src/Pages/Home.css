@@ -1,0 +1,120 @@
+.home {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #ffffff;
+  min-height: 100vh;
+  text-align: center;
+}
+
+/* Section Headers */
+.home h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+}
+
+.home h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #4a5568;
+  border-radius: 2px;
+}
+
+/* Polling Card Containers */
+.generic_ballot,
+.trump_approval {
+  background: #edf1f4;
+  border-radius: 12px;
+  padding: 40px;
+  margin-bottom: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* Polling Styling */
+.generic_ballot p,
+.trump_approval p {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Democratic Polling Styling */
+.generic_ballot p:first-child {
+  background: #3182ce;
+  color: white;
+  box-shadow: 0 2px 4px rgba(49, 130, 206, 0.3);
+}
+
+/* Republican Polling Styling */
+.generic_ballot p:last-child {
+  background: #e53e3e;
+  color: white;
+  box-shadow: 0 2px 4px rgba(229, 62, 62, 0.3);
+}
+
+/* Trump Approval Styling */
+.trump_approval p:first-child {
+  background: #38a169;
+  color: white;
+  box-shadow: 0 2px 4px rgba(56, 161, 105, 0.3);
+}
+
+/* Trump Disapproval Styling */
+.trump_approval p:last-child {
+  background: #c53030;
+  color: white;
+  box-shadow: 0 2px 4px rgba(221, 107, 32, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home {
+    padding: 20px 15px;
+  }
+  
+  .home h2 {
+    font-size: 2rem;
+  }
+  
+  .generic_ballot,
+  .trump_approval {
+    padding: 25px;
+    gap: 20px;
+  }
+  
+  .generic_ballot p,
+  .trump_approval p {
+    font-size: 1.4rem;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home h2 {
+    font-size: 1.5rem;
+  }
+  
+  .generic_ballot p,
+  .trump_approval p {
+    font-size: 1.2rem;
+    padding: 15px;
+  }
+}
